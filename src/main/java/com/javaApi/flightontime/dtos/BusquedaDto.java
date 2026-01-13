@@ -1,5 +1,6 @@
 package com.javaApi.flightontime.dtos;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.NotNull;
 
 public class BusquedaDto {
@@ -13,11 +14,12 @@ public class BusquedaDto {
     private String destino;
 
     @NotNull(message = "Falta la fecha de partida")
-    private String fecha;  // ← NUEVO: formato "2024-06-15"
+    private String fecha; // ← NUEVO: formato "2024-06-15"
 
     @NotNull(message = "Falta la hora de partida")
-    private String hora;   // ← NUEVO: formato "09:00"
+    private String hora; // ← NUEVO: formato "09:00"
 
+    @JsonProperty("distancia_km")
     @NotNull(message = "Falta la distancia")
     private Integer distanciaKm;
 

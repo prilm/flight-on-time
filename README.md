@@ -90,23 +90,17 @@ http://localhost:5000
 
 ## 2️⃣ Ejecutar la API Java
 
-### Opción A: Desde IntelliJ IDEA (Recomendado)
+Desde la Terminal ejecutar las busquedas, por ejemplo:
 
-1. Abrir **IntelliJ IDEA**
-2. Seleccionar **Open Project**
-3. Abrir la carpeta `java-api`
-4. Esperar a que Maven descargue las dependencias
-5. Ejecutar la clase `JavaApiApplication`
-
-La API Java quedará disponible en:
-
----
-
-### Opción B: Desde consola con Maven
-
-```bash
-cd java-api
-mvn spring-boot:run
+curl --location 'http://127.0.0.1:8080/search' \
+--header 'Content-Type: application/json' \
+--data '{
+    "aerolinea": "Latam",
+    "origen": "SCL",
+    "destino": "PMC",
+    "fechaPartida": "2026-02-10T14:30:00",
+    "distanciaKm": 1000
+}'
 
 ## Comunicación entre Servicios
 

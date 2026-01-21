@@ -126,13 +126,19 @@ curl --location 'http://127.0.0.1:8080/search' \
 
 ## Características Implementadas
 
--✅ Arquitectura de microservicios
--✅ Separación de responsabilidades (Java / Python)
--✅ Comunicación vía HTTP REST
--✅ Modelo de Machine Learning entrenado
--✅ Predicción automática de puntualidad
--✅ API desacoplada y escalable
--✅ Uso de formato JSON
+- ✅ Arquitectura de microservicios
+
+- ✅ Separación de responsabilidades (Java / Python)
+
+- ✅ Comunicación vía HTTP REST
+
+- ✅ Modelo de Machine Learning entrenado
+
+- ✅ Predicción automática de puntualidad
+
+- ✅ API desacoplada y escalable
+
+- ✅ Uso de formato JSON
 
 ### Modelo de Machine Learning
 - Modelo entrenado previamente y serializado con Joblib

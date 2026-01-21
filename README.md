@@ -49,7 +49,9 @@ La comunicación se realiza mediante **HTTP + JSON**.
 
 ---
 
+
 ## Estructura del Proyecto
+```
 flight-on-time/
 │
 ├── java-api/
@@ -69,7 +71,7 @@ flight-on-time/
 │ ├── modelo_vuelos.joblib # Modelo entrenado
 │ └──requirements.txt # Dependencias Python
 └── README.md
-
+```
 
 ---
 
@@ -101,6 +103,7 @@ curl --location 'http://127.0.0.1:8080/search' \
     "fechaPartida": "2026-02-10T14:30:00",
     "distanciaKm": 1000
 }'
+```
 
 ## Comunicación entre Servicios
 

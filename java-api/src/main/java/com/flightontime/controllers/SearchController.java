@@ -1,8 +1,8 @@
-package com.javaApi.flightontime.controllers;
+package com.flightontime.controllers;
 
-import com.javaApi.flightontime.dtos.BusquedaDto;
-import com.javaApi.flightontime.dtos.RespuestaDto;
-import com.javaApi.flightontime.services.PrediccionService;
+import com.flightontime.dtos.BusquedaDto;
+import com.flightontime.dtos.RespuestaDto;
+import com.flightontime.services.PrediccionService;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

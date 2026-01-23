@@ -1,4 +1,4 @@
-package com.javaApi.flightontime;
+package com.flightontime;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,7 +1,7 @@
-package com.javaApi.flightontime.services;
+package com.flightontime.services;
 
-import com.javaApi.flightontime.dtos.BusquedaDto;
-import com.javaApi.flightontime.dtos.RespuestaDto;
+import com.flightontime.dtos.BusquedaDto;
+import com.flightontime.dtos.RespuestaDto;
 import tools.jackson.databind.ObjectMapper;
 
 import java.net.URI;

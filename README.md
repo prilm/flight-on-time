@@ -113,11 +113,12 @@ curl --location 'http://127.0.0.1:5000/predict' \
 curl --location 'http://127.0.0.1:8080/search' \
 --header 'Content-Type: application/json' \
 --data '{
-    "aerolinea": "Latam",
-    "origen": "SCL",
-    "destino": "PMC",
-    "fechaPartida": "2026-02-10T14:30:00",
-    "distanciaKm": 1000
+    "aerolinea": "AA",
+    "origen": "LAX",
+    "destino": "ORD",
+    "fecha": "2026-03-10",
+    "hora": "03:04",
+    "distancia_km": 2802
 }'
 
 # Paso 3

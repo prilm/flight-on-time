@@ -131,7 +131,8 @@ curl --location 'http://127.0.0.1:8080/search' \
 <img width="1920" height="1012" alt="Screen Shot 2026-01-23 at 12 57 52 AM" src="https://github.com/user-attachments/assets/84a72a84-09d9-4950-b43c-21a336a254f4" />
 
 
-![ScreenRecording2026-01-23at1 01 56AM-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/3dc08377-fe10-4695-9e06-64fade6c05ee)
+![ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/1fedc149-2d69-47a7-9e15-2345b663c9a7)
+
 
 
 

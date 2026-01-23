@@ -51,7 +51,7 @@ La comunicación se realiza mediante **HTTP + JSON**.
 
 
 ## Estructura del Proyecto
-```
+```bash
 flight-on-time/
 │
 ├── java-api/
@@ -82,17 +82,33 @@ flight-on-time/
 ⚠️ **IMPORTANTE:** La API Python debe ejecutarse **antes** que la API Java.
 
 ```bash
+
+# Paso 1
+# Instalar las dependencias de Python
 cd python-api
 pip install -r requirements.txt
+
+# Ejecutar el microservicio de Data Science
 python app.py
 
-## La API Python quedará disponible en:
+# La API Python quedará disponible en: http://localhost:5000, por ejemplo:
 
-http://localhost:5000
+curl --location 'http://127.0.0.1:5000/predict' \
+--header 'Content-Type: application/json' \
+--data '{
+    "aerolinea": "AA",
+    "origen": "ATL",
+    "destino": "LAX",
+    "fecha_partida": "2025-01-15 14:30:00",
+    "distancia_km": 3000
+}'
 
-## 2️⃣ Ejecutar la API Java
+# Paso 2
+# Abrir el proyecto java-api en IntelliJ
+# ejecutar la API Java desde FlightontimeApplication.java
+# Esto se ejecuta en el puerto 8080
 
-Desde la Terminal ejecutar las busquedas, por ejemplo:
+# Se puede hacer un request HTTP a la API Java desde la terminal, por ejemplo:
 
 curl --location 'http://127.0.0.1:8080/search' \
 --header 'Content-Type: application/json' \
@@ -103,6 +119,11 @@ curl --location 'http://127.0.0.1:8080/search' \
     "fechaPartida": "2026-02-10T14:30:00",
     "distanciaKm": 1000
 }'
+
+# Paso 3
+# Abrir applicación web desde frontend-app/index.html
+# Rellenar el formulario y consultar
+
 ```
 
 ## Comunicación entre Servicios

@@ -12,6 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
             closeModal();
         }
     });
+
+    document.getElementById('origen').addEventListener('change', calcularDistanciaKm);
+    document.getElementById('destino').addEventListener('change', calcularDistanciaKm);
 });
 
 async function loadAirlines() {
@@ -40,6 +43,8 @@ async function loadAirlines() {
     }
 }
 
+const coordenadas = {}
+
 async function loadAirports() {
     try {
         const response = await fetch('airports.csv');
@@ -53,6 +58,9 @@ async function loadAirports() {
         const airports = rows.map(row => {
             if (!row.trim()) return null;
             const cols = row.split(',');
+
+            coordenadas[cols[0]] = [cols[5], cols[6]];
+
             // CSV: IATA_CODE,AIRPORT,CITY,...
             return {
                 code: cols[0],
@@ -99,11 +107,11 @@ async function handlePrediction(e) {
         aerolinea: formData.get('aerolinea'),
         origen: formData.get('origen'),
         destino: formData.get('destino'),
-        distancia_km: parseInt(formData.get('distancia_km'))
+        distancia_km: parseInt(document.getElementById('distancia_km').value)
     };
 
     try {
-        const response = await fetch('/search', {
+        const response = await fetch('http://127.0.0.1:8080/search', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -155,4 +163,39 @@ function showResult(result) {
 
 function closeModal() {
     document.getElementById('resultModal').classList.add('hidden');
+}
+
+function calcularDistanciaKm(e) {
+    const origen = document.getElementById('origen').value;
+    const destino = document.getElementById('destino').value;
+
+    if (origen === '' || destino === '') {
+        return;
+    }
+
+    console.log('Calcular distancia entre ', origen, destino);
+
+    function haversineDistance(lat1, lon1, lat2, lon2) {
+    const R = 6371; // Radio de la Tierra en kilómetros
+
+    const toRad = deg => deg * Math.PI / 180;
+
+    const dLat = toRad(lat2 - lat1);
+    const dLon = toRad(lon2 - lon1);
+
+    const a =
+        Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) *
+        Math.sin(dLon / 2) * Math.sin(dLon / 2);
+
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+
+    return R * c;
+    }
+
+    // const distancia = haversineDistance(coordenadaOrigen, coordenadaDestino);
+    const distancia = parseInt(haversineDistance(coordenadas[origen][0], coordenadas[origen][1], coordenadas[destino][0], coordenadas[destino][1]));
+    
+    document.getElementById('distancia_km').value = distancia;
+    document.getElementById('valor_distancia_km').innerHTML = distancia;
 }

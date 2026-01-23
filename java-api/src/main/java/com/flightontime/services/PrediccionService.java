@@ -19,7 +19,7 @@ public class PrediccionService {
 
         // Crear el mapa con los datos en el formato correcto
         Map<String, Object> map = new HashMap<>();
-        map.put("fecha", consulta.getFecha());           // ← ACTUALIZADO
+        map.put("fecha_partida", consulta.getFecha());           // ← ACTUALIZADO
         map.put("hora", consulta.getHora());             // ← NUEVO
         map.put("aerolinea", consulta.getAerolinea());
         map.put("origen", consulta.getOrigen());

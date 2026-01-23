@@ -19,7 +19,7 @@ public class BusquedaDto {
     @NotNull(message = "Falta la hora de partida")
     private String hora; // ← NUEVO: formato "09:00"
 
-    @JsonProperty("distancia_km")
+    @JsonProperty("distancia_km")   
     @NotNull(message = "Falta la distancia")
     private Integer distanciaKm;
 

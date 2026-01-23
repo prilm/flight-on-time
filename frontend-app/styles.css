@@ -215,3 +215,7 @@ input:focus, select:focus {
 .bg-red { background-color: var(--danger-color); }
 .bg-yellow { background-color: var(--warning-color); }
 .bg-green { background-color: var(--success-color); }
+
+#valor_distancia_km {
+    font-size: 30px;
+}
